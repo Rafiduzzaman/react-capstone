@@ -29,8 +29,6 @@
 
 **Whisker World: Unveiling Cat Breeds** is an innovative web application that explores a captivating showcase of diverse cat breeds, each with its unique traits, history, and charm. From playful Persians to adventurous Bengals, discover the fascinating world of feline companions. Engage with beautiful visuals and in-depth breed insights, fostering a deeper connection with our whiskered friends. Join us in celebrating the wonderful tapestry of cats! 🐱✨
 
-[![App Demo](src/assets/previewApp.gif)](link-to-your-video)
-
 ## 🛠 Built With <a name="built-with">React-Redux</a>
 
 ### Tech Stack <a name="tech-stack"></a>
