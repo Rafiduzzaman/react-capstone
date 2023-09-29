@@ -137,7 +137,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Zafron047/Heartland_Humane/issues).
+Feel free to check the [issues page](https://github.com/Rafiduzzaman/react-capstone/issues).
 
 <!-- SUPPORT -->
 
