@@ -37,7 +37,7 @@ const Home = () => {
         <input
           className="search-bar-wrapper"
           type="text"
-          placeholder="Search by breed name..."
+          placeholder="Search by breed..."
           value={searchQuery}
           onChange={handleSearchInputChange}
         />
