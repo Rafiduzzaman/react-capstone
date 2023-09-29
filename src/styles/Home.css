@@ -1,0 +1,111 @@
+@media only screen and (max-width: 767px) {
+  .home-container {
+    background-color: rgba(205, 44, 125, 0.819);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+  }
+
+  .header-img {
+    width: 90vw;
+    border: 3px solid aliceblue;
+    border-radius: 30px;
+    opacity: 0.8;
+    margin: 1.5rem 0;
+  }
+
+  .headline {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: aliceblue;
+  }
+
+  .search-bar-wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .table-wrapper {
+    margin-top: 10px;
+  }
+
+  .Breeds {
+    color: purple;
+    margin: 0;
+    padding: 0;
+    align-self: flex-start;
+  }
+
+  .temp {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .table a {
+    text-decoration: none;
+    color: purple;
+  }
+
+  .table-cell {
+    position: relative;
+    background-color: rgb(255, 105, 180);
+    border-radius: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0.6;
+  }
+
+  .left-wing {
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .breed-name {
+    font-size: 1.4rem;
+  }
+
+  .feature {
+    font-size: small;
+  }
+
+  .home-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 12vw;
+  }
+}
