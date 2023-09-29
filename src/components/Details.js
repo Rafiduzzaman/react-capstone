@@ -36,42 +36,42 @@ const Details = () => {
           {breedData[0].name}
         </h1>
         <div className="grid-container">
-          <p className="breed-feature">
+          <p className="BreedDets">
             Lifespan:
             {' '}
             {breedData[0].lifeSpan}
             {' '}
             years
           </p>
-          <p className="breed-feature">
+          <p className="BreedDets">
             Adaptability:
             {' '}
             {breedData[0].adaptability}
             {' '}
             / 5
           </p>
-          <p className="breed-feature">
+          <p className="BreedDets">
             AffectionLevel:
             {' '}
             {breedData[0].affectionLevel}
             {' '}
             / 5
           </p>
-          <p className="breed-feature">
+          <p className="BreedDets">
             EnergyLevel:
             {' '}
             {breedData[0].energyLevel}
             {' '}
             / 5
           </p>
-          <p className="breed-feature">
+          <p className="BreedDets">
             HealthIssues:
             {' '}
             {breedData[0].healthIssues}
             {' '}
             / 5
           </p>
-          <p className="breed-feature">
+          <p className="BreedDets">
             Intelligence:
             {' '}
             {breedData[0].intelligence}

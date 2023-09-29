@@ -1,6 +1,6 @@
 @media only screen and (max-width: 767px) {
   .home-container {
-    background-color: rgba(205, 44, 125, 0.819);
+    background-color: rgba(110, 105, 255, 0.819);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -65,12 +65,12 @@
 
   .table a {
     text-decoration: none;
-    color: purple;
+    color: blue;
   }
 
   .table-cell {
     position: relative;
-    background-color: rgb(255, 105, 180);
+    background-color: rgb(120, 173, 242);
     border-radius: 10px;
     border-bottom: 1px solid #ccc;
     text-align: center;
@@ -101,7 +101,7 @@
     font-size: small;
   }
 
-  .home-loading {
+  .load {
     display: flex;
     justify-content: center;
     align-items: center;
