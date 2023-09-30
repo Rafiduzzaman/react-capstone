@@ -1,6 +1,6 @@
 @media only screen and (max-width: 767px) {
   .home-container {
-    background-color: rgba(110, 105, 255, 0.819);
+    background-color: rgba(205, 44, 125, 0.819);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,11 +12,9 @@
   }
 
   .header-img {
-    width: 90vw;
+    width:100%;
     border: 3px solid aliceblue;
-    border-radius: 30px;
     opacity: 0.8;
-    margin: 1.5rem 0;
   }
 
   .headline {
@@ -31,9 +29,8 @@
   }
 
   input[type="text"] {
-    width: 80%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -58,20 +55,20 @@
   .table {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
     padding: 0;
+    margin: 0%;
     justify-content: center;
   }
 
   .table a {
     text-decoration: none;
-    color: blue;
+    color: purple;
   }
 
   .table-cell {
     position: relative;
-    background-color: rgb(120, 173, 242);
-    border-radius: 10px;
+    background-color: rgb(255, 105, 180);
+    border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     text-align: center;
     width: 10rem;
