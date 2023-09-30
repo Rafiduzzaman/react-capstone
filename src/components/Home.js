@@ -42,24 +42,26 @@ const Home = () => {
           onChange={handleSearchInputChange}
         />
         <ul className="table">
-          {filteredBreeds.map((breed) => (
-            <Link className="table-row" key={breed.id} to={`/Details/${breed.id}`}>
-              <li className="table-cell">
-                <img className="arrow" alt="arrow" src={arrow} />
-                <div className="left-wing">
-                  <h2 className="breed-name">
-                    {breed.name}
-                  </h2>
-                  <p className="feature">
-                    Origin:
-                    {' '}
-                    {breed.origin}
-                  </p>
-                </div>
+          {filteredBreeds.map((breed, index) => {
+            const isDark = (index + 1) % 4 === 2 || (index + 1) % 4 === 3;
+
+            return (
+              <li className={`table-cell ${isDark ? 'dark' : ''}`} key={breed.id}>
+                <Link className="table-row" to={`/Details/${breed.id}`}>
+                  <img className="arrow" alt="arrow" src={arrow} />
+                  <div className="card-content">
+                    <h2 className="breed-name">{breed.name}</h2>
+                    <p className="feature">
+                      Origin:
+                      {breed.origin}
+                    </p>
+                  </div>
+                </Link>
               </li>
-            </Link>
-          ))}
+            );
+          })}
         </ul>
+
       </>
     );
   }
