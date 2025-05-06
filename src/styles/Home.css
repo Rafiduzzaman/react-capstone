@@ -121,3 +121,155 @@
     font-size: 12vw;
   }
 }
+@media only screen and (min-width: 768px) {
+  .home-container {
+    background-color: rgba(205, 44, 125, 0.819);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .header-img {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    border: 4px solid aliceblue;
+    opacity: 0.85;
+    margin-right: 36px;
+  }
+
+  .headline {
+    text-decoration: underline;
+    text-underline-offset: 14px;
+    color: aliceblue;
+    font-size: 2.6rem;
+    margin-left: 16px;
+  }
+
+  .search-bar-wrapper {
+    width: 80vw;
+    max-width: 1200px;
+    min-width: 350px;
+    margin: 0 auto 24px auto;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.3rem;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  .table-wrapper {
+    margin-top: 24px;
+    width: 90vw;
+    max-width: 1300px;
+  }
+
+  .Breeds {
+    color: purple;
+    font-size: 2rem;
+    margin: 10px 0 24px 0;
+    align-self: flex-start;
+  }
+
+  .table {
+    /* Desktop = grid layout for nice auto sizing */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    box-sizing: border-box;
+  }
+
+  .table a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .table-cell {
+    background: #c83278d9;
+    border-radius: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 32px 14px;
+    margin: 0;
+    transition: background 0.2s;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Remove any fixed height here! */
+  }
+
+  .table-cell.dark {
+    background-color: rgb(200, 50, 120, 0.95);
+  }
+
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .card-content {
+    flex-grow: 1;
+  }
+
+  .breed-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: purple;
+  }
+
+  .feature {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    opacity: 0.7;
+    width: 22px;
+  }
+
+  .left-wing {
+    position: absolute;
+    bottom: 18px;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 5vw;
+    height: 100vh;
+  }
+}

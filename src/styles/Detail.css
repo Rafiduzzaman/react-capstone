@@ -95,3 +95,118 @@
     margin: 0;
   }
 }
+@media screen and (min-width: 768px) {
+  .container {
+    background-color: rgba(205, 44, 125, 0.819);
+    width: 90vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  nav {
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+
+  .nav a {
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  .img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .detail-header {
+    text-align: left;
+    color: aliceblue;
+    text-decoration: underline;
+    text-underline-offset: 14px;
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+  }
+
+  .image-box {
+    width: 13rem;
+    text-align: center;
+    color: aliceblue;
+    margin: 32px 24px 0 0;
+  }
+
+  .cat-img {
+    width: 13rem;
+    height: 13rem;
+    border: 5px solid rgba(255, 105, 180, 0.85);
+    border-radius: 20px;
+    opacity: 0.9;
+    object-fit: cover;
+  }
+
+  .grid-container {
+    width: 75vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .feature {
+    font-size: 19px;
+    color: #fff;
+    padding: 8px;
+    margin: 0;
+  }
+
+  .BreedDets {
+    border: 2px solid rgb(243, 150, 196);
+    color: rgba(240, 248, 255, 0.92);
+    margin: 10px 0;
+    padding: 10px 10px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .Back-Button {
+    color: aliceblue;
+    margin-left: 18px;
+    font-size: 1.5rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .Back-Button:hover {
+    background-color: #fff2;
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 6vw;
+    height: 65vh;
+    background-color: rgba(205, 44, 125, 0.819);
+    margin: 0;
+  }
+}
