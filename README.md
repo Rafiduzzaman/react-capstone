@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="#live-demo"></a>
 
-- [Click here](https://whisker-world-unveiling-cat-breeds.onrender.com](https://chipper-treacle-df4c86.netlify.app/) to see Live Demo.
+- [Click here](https://chipper-treacle-df4c86.netlify.app/) to see Live Demo.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
