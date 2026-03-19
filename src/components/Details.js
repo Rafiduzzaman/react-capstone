@@ -120,18 +120,29 @@ const Details = () => {
       <section
         className="preview-modal"
         aria-label="Cat image popup preview"
-        onClick={() => setIsPreviewOpen(false)}
       >
-        <div className="preview-dialog" onClick={(event) => event.stopPropagation()}>
+        <button
+          type="button"
+          className="preview-backdrop"
+          onClick={() => setIsPreviewOpen(false)}
+          aria-label="Close image preview"
+        />
+        <div className="preview-dialog">
           <button
             type="button"
             className="modal-close"
-            onClick={() => setIsPreviewOpen(false)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setIsPreviewOpen(false);
+            }}
             aria-label="Close image preview"
           >
             &times;
           </button>
-          <section className="preview-panel" aria-label="Cat image preview carousel">
+          <section
+            className="preview-panel"
+            aria-label="Cat image preview carousel"
+          >
             <button type="button" className="carousel-btn" onClick={showPreviousImage} aria-label="Show previous image">
               &#8592;
             </button>
