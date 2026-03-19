@@ -1,8 +1,8 @@
 .container {
-  width: min(1200px, 94vw);
+  width: min(1400px, 98vw);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 1.2rem 0 3rem;
+  padding: 0.65rem 0 2rem;
   animation: rise-in 0.55s ease-out;
 }
 
@@ -56,6 +56,81 @@
   font-size: 1rem;
 }
 
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(24, 15, 10, 0.78);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.preview-dialog {
+  position: relative;
+  width: min(880px, 94vw);
+  border-radius: 22px;
+  padding: 1rem;
+  background: linear-gradient(145deg, rgba(66, 42, 29, 0.96), rgba(96, 55, 32, 0.96));
+  border: 1px solid rgba(255, 220, 173, 0.32);
+  box-shadow: 0 18px 48px rgba(10, 5, 2, 0.55);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: #ffe8ca;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.preview-panel {
+  margin: 1.5rem 0 0.65rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.preview-img {
+  width: 100%;
+  height: min(72vh, 560px);
+  object-fit: contain;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 224, 185, 0.78);
+  box-shadow: var(--shadow-soft);
+  background: rgba(20, 12, 8, 0.72);
+}
+
+.carousel-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 236, 211, 0.45);
+  background: rgba(69, 43, 28, 0.9);
+  color: #fff1df;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+.preview-count {
+  margin: 0 0 0.8rem;
+  color: rgba(255, 241, 220, 0.92);
+  font-weight: 600;
+  text-align: center;
+}
+
 .grid-container {
   width: 100%;
   display: grid;
@@ -88,6 +163,20 @@
   margin: 0;
 }
 
+.thumb-btn {
+  border: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.thumb-btn.active .cat-img {
+  border-color: var(--accent-gold);
+  transform: scale(1.02);
+  filter: saturate(1.12);
+}
+
 .cat-img {
   width: 100%;
   aspect-ratio: 1;
@@ -117,7 +206,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 
   .detail-hero {
@@ -126,6 +215,20 @@
 
   .detail-subtitle {
     font-size: 1.08rem;
+  }
+
+  .preview-panel {
+    gap: 1rem;
+  }
+
+  .preview-dialog {
+    padding: 1.2rem;
+  }
+
+  .carousel-btn {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.38rem;
   }
 
   .grid-container {

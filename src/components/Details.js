@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Nav from './Nav';
@@ -11,10 +11,27 @@ const Details = () => {
   const error = useSelector((state) => state.CatBreeds.error);
   const dispatch = useDispatch();
   const { breedId } = useParams();
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   useEffect(() => {
     dispatch(fetchBreed(breedId));
   }, [dispatch, breedId]);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+    setIsPreviewOpen(false);
+  }, [breedId, breedData.length]);
+
+  const showNextImage = () => {
+    if (breedData.length === 0) return;
+    setActiveImageIndex((prevIndex) => (prevIndex + 1) % breedData.length);
+  };
+
+  const showPreviousImage = () => {
+    if (breedData.length === 0) return;
+    setActiveImageIndex((prevIndex) => (prevIndex - 1 + breedData.length) % breedData.length);
+  };
 
   if (loading) {
     return <p className="loading">Loading...</p>;
@@ -83,12 +100,62 @@ const Details = () => {
       </>
       )}
       <ul className="img-container">
-        {breedData.map((item) => (
+        {breedData.map((item, index) => (
           <li className="image-box" key={item.id}>
-            <img className="cat-img" src={item.url} alt="A Cat" />
+            <button
+              type="button"
+              className={`thumb-btn ${isPreviewOpen && index === activeImageIndex ? 'active' : ''}`}
+              onClick={() => {
+                setActiveImageIndex(index);
+                setIsPreviewOpen(true);
+              }}
+              aria-label={`Preview image ${index + 1}`}
+            >
+              <img className="cat-img" src={item.url} alt={`${item.name} thumbnail ${index + 1}`} />
+            </button>
           </li>
         ))}
       </ul>
+      {isPreviewOpen && (
+      <section
+        className="preview-modal"
+        aria-label="Cat image popup preview"
+        onClick={() => setIsPreviewOpen(false)}
+      >
+        <div className="preview-dialog" onClick={(event) => event.stopPropagation()}>
+          <button
+            type="button"
+            className="modal-close"
+            onClick={() => setIsPreviewOpen(false)}
+            aria-label="Close image preview"
+          >
+            &times;
+          </button>
+          <section className="preview-panel" aria-label="Cat image preview carousel">
+            <button type="button" className="carousel-btn" onClick={showPreviousImage} aria-label="Show previous image">
+              &#8592;
+            </button>
+            <img
+              className="preview-img"
+              src={breedData[activeImageIndex].url}
+              alt={`${breedData[0].name} preview ${activeImageIndex + 1}`}
+            />
+            <button type="button" className="carousel-btn" onClick={showNextImage} aria-label="Show next image">
+              &#8594;
+            </button>
+          </section>
+          <p className="preview-count">
+            Image
+            {' '}
+            {activeImageIndex + 1}
+            {' '}
+            of
+            {' '}
+            {breedData.length}
+          </p>
+        </div>
+      </section>
+      )}
     </div>
   );
 };

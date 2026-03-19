@@ -25,9 +25,13 @@ const Home = () => {
   const filteredBreeds = breedList.filter((breed) => breed.name
     .toLowerCase().includes(searchQuery.toLowerCase()));
 
-  const searchSuggestions = breedList
-    .filter((breed) => breed.name.toLowerCase().includes(searchQuery.toLowerCase()))
-    .slice(0, 8);
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+
+  const searchSuggestions = normalizedQuery
+    ? breedList
+      .filter((breed) => breed.name.toLowerCase().includes(normalizedQuery))
+      .slice(0, 5)
+    : [];
 
   let content;
 
@@ -53,14 +57,16 @@ const Home = () => {
             />
             <datalist id="breed-suggestions">
               {searchSuggestions.map((breed) => (
-                <option key={breed.id} value={breed.name} />
+                <option key={breed.id} value={breed.name}>{breed.name}</option>
               ))}
             </datalist>
           </label>
         </section>
         <ul className="table">
           {filteredBreeds.map((breed, index) => {
-            const isDark = (index + 1) % 4 === 2 || (index + 1) % 4 === 3;
+            const row = Math.floor(index / 4);
+            const column = index % 4;
+            const isDark = (row + column) % 2 === 1;
 
             return (
               <li className={`table-cell ${isDark ? 'dark' : ''}`} key={breed.id}>
