@@ -20,7 +20,7 @@ const Details = () => {
     return <p className="loading">Loading...</p>;
   } if (error) {
     return (
-      <p>
+      <p className="loading">
         Error fetching:
         { error }
       </p>
@@ -30,11 +30,12 @@ const Details = () => {
       <Nav />
       {breedData.length > 0 && (
       <>
-        <h1 className="detail-header">
-          Breed:
-          {' '}
-          {breedData[0].name}
-        </h1>
+        <section className="detail-hero">
+          <h1 className="detail-header">
+            {breedData[0].name}
+          </h1>
+          <p className="detail-subtitle">A closer look at temperament, vitality, and personality.</p>
+        </section>
         <div className="grid-container">
           <p className="BreedDets">
             Lifespan:

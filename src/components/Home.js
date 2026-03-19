@@ -25,29 +25,46 @@ const Home = () => {
   const filteredBreeds = breedList.filter((breed) => breed.name
     .toLowerCase().includes(searchQuery.toLowerCase()));
 
+  const searchSuggestions = breedList
+    .filter((breed) => breed.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    .slice(0, 8);
+
   let content;
 
   if (loading) {
     content = <p className="load">Loading...</p>;
   } else if (error) {
-    content = <p>{error}</p>;
+    content = <p className="load">{error}</p>;
   } else {
     content = (
       <>
-        <input
-          className="search-bar-wrapper"
-          type="text"
-          placeholder="Search by breed..."
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-        />
+        <section className="search-area">
+          <label htmlFor="breed-search" className="search-label">
+            Find Your Feline Match
+            <input
+              id="breed-search"
+              className="search-bar-wrapper"
+              type="text"
+              placeholder="Search by breed..."
+              list="breed-suggestions"
+              autoComplete="off"
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+            />
+            <datalist id="breed-suggestions">
+              {searchSuggestions.map((breed) => (
+                <option key={breed.id} value={breed.name} />
+              ))}
+            </datalist>
+          </label>
+        </section>
         <ul className="table">
           {filteredBreeds.map((breed, index) => {
             const isDark = (index + 1) % 4 === 2 || (index + 1) % 4 === 3;
 
             return (
               <li className={`table-cell ${isDark ? 'dark' : ''}`} key={breed.id}>
-                <Link className="table-row" to={`/Details/${breed.id}`}>
+                <Link className="table-row" to={`/Details/${breed.id}`} aria-label={`View ${breed.name} breed details`}>
                   <img className="arrow" alt="arrow" src={arrow} />
                   <div className="card-content">
                     <h2 className="breed-name">{breed.name}</h2>
@@ -61,6 +78,9 @@ const Home = () => {
             );
           })}
         </ul>
+        {filteredBreeds.length === 0 && (
+          <p className="empty-state">No breeds found. Try another keyword.</p>
+        )}
 
       </>
     );
@@ -70,6 +90,13 @@ const Home = () => {
     <div className="home-container">
       <div className="header">
         <img className="header-img" src={cat} alt="Header" />
+        <div className="hero-copy">
+          <p className="hero-tag">Whisker World</p>
+          <h1 className="headline">Cat Breeds, Curated for Curious Cat Lovers</h1>
+          <p className="hero-subtitle">
+            Explore global feline personalities through a rich visual gallery and deep breed facts.
+          </p>
+        </div>
       </div>
       {content}
     </div>

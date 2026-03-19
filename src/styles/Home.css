@@ -1,275 +1,210 @@
+.home-container {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+  padding: 2rem 0 3.5rem;
+  animation: lift-in 0.6s ease-out;
+}
+
+.header {
+  display: grid;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.header-img {
+  width: 100%;
+  border-radius: 24px;
+  border: 3px solid rgba(255, 235, 208, 0.65);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+  min-height: 180px;
+  max-height: 430px;
+}
+
+.hero-copy {
+  background: linear-gradient(145deg, rgba(255, 233, 201, 0.96), rgba(241, 193, 132, 0.84));
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 22px;
+  color: var(--text-main);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-tag {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.headline {
+  margin: 0.4rem 0 0;
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #4b3728;
+}
+
+.search-area {
+  margin: 1.4rem 0 1.2rem;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.search-bar-wrapper {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 216, 175, 0.65);
+  background: rgba(255, 249, 240, 0.93);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-family: 'Manrope', sans-serif;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar-wrapper:focus {
+  border-color: var(--accent-rust);
+  box-shadow: 0 0 0 3px rgba(228, 137, 70, 0.22);
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.table-cell {
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--card-light);
+  box-shadow: var(--shadow-soft);
+  min-height: 180px;
+  transform: translateY(0);
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.table-cell.dark {
+  background: var(--card-dark);
+}
+
+.table-cell:hover {
+  transform: translateY(-6px);
+  filter: saturate(1.08);
+}
+
+.table-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.15rem;
+  text-decoration: none;
+}
+
+.card-content {
+  margin-top: auto;
+}
+
+.arrow {
+  align-self: flex-end;
+  width: 1rem;
+  opacity: 0.7;
+}
+
+.breed-name {
+  margin: 0;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: #422d1e;
+}
+
+.table-cell.dark .breed-name {
+  color: var(--accent-cream);
+}
+
+.feature {
+  margin: 0.55rem 0 0;
+  font-size: 0.95rem;
+  color: #6a4f3b;
+}
+
+.table-cell.dark .feature {
+  color: rgba(255, 245, 231, 0.9);
+}
+
+.load {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--accent-cream);
+}
+
+.empty-state {
+  margin: 1.2rem 0 0;
+  text-align: center;
+  color: rgba(255, 238, 218, 0.92);
+  font-weight: 600;
+}
+
 @media only screen and (max-width: 767px) {
   .home-container {
-    background-color: rgba(205, 44, 125, 0.819);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 1.2rem;
   }
 
   .header {
-    display: flex;
-  }
-
-  .header-img {
-    width: 100%;
-    border: 3px solid aliceblue;
-    opacity: 0.8;
-  }
-
-  .headline {
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    color: aliceblue;
-  }
-
-  .search-bar-wrapper {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .table-wrapper {
-    margin-top: 10px;
-  }
-
-  .Breeds {
-    color: purple;
-    margin: 0;
-    padding: 0;
-    align-self: flex-start;
-  }
-
-  .temp {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .table {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0%;
-    justify-content: center;
-  }
-
-  .table a {
-    text-decoration: none;
-    color: purple;
-  }
-
-  .table-cell {
-    display: inline-block;
-    width: 50%;
-    box-sizing: border-box;
-    text-align: center;
-    height: 10rem;
-  }
-
-  .table-cell.dark {
-    background-color: rgb(200, 50, 120);
-  }
-
-  .table-row {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    padding: 10px;
-    text-decoration: none;
-  }
-
-  .card-content {
-    flex-grow: 1;
-  }
-
-  .arrow {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    opacity: 0.6;
-  }
-
-  .left-wing {
-    position: absolute;
-    bottom: 10px;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .breed-name {
-    font-size: 1.4rem;
-  }
-
-  .feature {
-    font-size: small;
-  }
-
-  .load {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: aliceblue;
-    font-size: 12vw;
+    grid-template-columns: 1fr;
   }
 }
+
 @media only screen and (min-width: 768px) {
-  .home-container {
-    background-color: rgba(205, 44, 125, 0.819);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
-  }
-
   .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 32px;
+    grid-template-columns: minmax(340px, 1.15fr) minmax(250px, 0.85fr);
   }
 
-  .header-img {
-    width: 600px;
-    max-width: 100%;
-    height: auto;
-    border: 4px solid aliceblue;
-    opacity: 0.85;
-    margin-right: 36px;
-  }
-
-  .headline {
-    text-decoration: underline;
-    text-underline-offset: 14px;
-    color: aliceblue;
-    font-size: 2.6rem;
-    margin-left: 16px;
+  .hero-copy {
+    padding: 1.8rem;
   }
 
   .search-bar-wrapper {
-    width: 80vw;
-    max-width: 1200px;
-    min-width: 350px;
-    margin: 0 auto 24px auto;
-  }
-
-  input[type="text"] {
-    width: 100%;
-    padding: 18px;
-    font-size: 1.3rem;
-    border: 1.5px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-  }
-
-  .table-wrapper {
-    margin-top: 24px;
-    width: 90vw;
-    max-width: 1300px;
-  }
-
-  .Breeds {
-    color: purple;
-    font-size: 2rem;
-    margin: 10px 0 24px 0;
-    align-self: flex-start;
+    font-size: 1.05rem;
   }
 
   .table {
-    /* Desktop = grid layout for nice auto sizing */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1300px;
-    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@keyframes lift-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
 
-  .table a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .table-cell {
-    background: #c83278d9;
-    border-radius: 16px;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 32px 14px;
-    margin: 0;
-    transition: background 0.2s;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Remove any fixed height here! */
-  }
-
-  .table-cell.dark {
-    background-color: rgb(200, 50, 120, 0.95);
-  }
-
-  .table-row {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    text-decoration: none;
-  }
-
-  .card-content {
-    flex-grow: 1;
-  }
-
-  .breed-name {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: purple;
-  }
-
-  .feature {
-    font-size: 1.1rem;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-
-  .arrow {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    opacity: 0.7;
-    width: 22px;
-  }
-
-  .left-wing {
-    position: absolute;
-    bottom: 18px;
-    width: 85%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .load {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: aliceblue;
-    font-size: 5vw;
-    height: 100vh;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
